@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/home/HomeView.vue'
 import MySupports from '@/views/Supports/MySupports.vue'
+import ModulesAndLesssons from '@/views/modules/ModulesAndLessons'
 
 const routes = [
   {
     path: '/campus', 
     component: () => import('@/layouts/DefaultTemplate.vue'), 
     children: [
+      {
+        path: 'modulos', 
+        name: 'campus.modules', 
+        component: ModulesAndLesssons
+      }, 
       {
         path: '', 
         name: 'campus.home', 
